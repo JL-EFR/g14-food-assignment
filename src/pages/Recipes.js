@@ -1,8 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Menucard from "../components/Menucard"
-import Bar from "../components/Bar"
+import MenuCard from '../components/Menucard'
+import Bar from '../components/Bar'
 
 const Recipes = () => {
   const keyword = ''
