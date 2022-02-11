@@ -1,24 +1,17 @@
 import React from "react"
+import Menucard from "../components/Menucard"
+import Bar from "../components/Bar"
 
 const Recipes = () => {
   return (
     <div className="recipes">
-      <form className="searchbar">
-        <input type="search" placeholder="Search for Meal" />
-        <button className="inputbutton">Search</button>
-      </form>
+      <Bar />
       <div className="menulist">
-        <div className="menu">
-          <div className="pic">
-            <img
-              src="https://www.themealdb.com/images/media/meals/xqwwpy1483908697.jpg"
-              alt="menupic"
-            ></img>
-          </div>
-          <div className="menuname">
-            <h5>name</h5>
-          </div>
-        </div>
+        <Menucard />
+        <Menucard />
+        <Menucard />
+        <Menucard />
+        <Menucard />
       </div>
     </div>
   )
