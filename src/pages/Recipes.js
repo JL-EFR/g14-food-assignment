@@ -1,7 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import FoodCard from '../components/FoodCard'
+import Menucard from "../components/Menucard"
+import Bar from "../components/Bar"
 
 const Recipes = () => {
   const keyword = ''
@@ -18,14 +19,11 @@ const Recipes = () => {
 
   return (
     <div className="recipes">
-      <form className="searchbar">
-        <input type="search" placeholder="Search for Meal" />
-        <button className="inputbutton">Search</button>
-      </form>
+      <Bar />
       <div className="menulist">
         {meals.map((meal) => (
           <Link key={meal.idMeal} to={`/recipes/${meal.idMeal}`}>
-            <FoodCard img={meal.strMealThumb} title={meal.strMeal} />
+            <MenuCard img={meal.strMealThumb} title={meal.strMeal} />
           </Link>
         ))}
       </div>

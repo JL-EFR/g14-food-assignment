@@ -4,8 +4,9 @@
 }
 
 .banner {
-  width: 100%;
-  padding: 30px 70px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 70px;
   color: darkblue;
 }
 
@@ -15,17 +16,22 @@ body {
 }
 
 .recipes {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
 }
 
 .menulist {
-  padding: 30px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 45px;
+  flex-wrap: wrap;
 }
 
 .menu {
-  width: 20%;
+  flex: 0 0 20%;
   overflow: hidden;
   border-radius: 2%;
   background-color: white;
@@ -41,6 +47,12 @@ body {
 
 .pic img {
   width: 100%;
+}
+
+.bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .searchbar {
@@ -65,4 +77,42 @@ button {
   border: none;
   cursor: pointer;
   background-color: darkblue;
+}
+
+.fullinfo {
+  flex: 0 0 25%;
+  border-radius: 5%;
+  overflow: hidden;
+  background-color: white;
+  border: 1px solid lightgray;
+}
+
+.detail {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullpic img {
+  width: 100%;
+}
+
+.ingredients {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 35px;
+}
+
+.ingredients h5 {
+  font-size: larger;
+  margin-bottom: 5px;
+}
+
+.ingredients h6 {
+  font-size: medium;
+  margin-bottom: 10px;
+}
+.ingredients p {
+  font-size: smaller;
 }
