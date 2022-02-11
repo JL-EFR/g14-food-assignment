@@ -1,11 +1,18 @@
-import React from "react"
+import React from 'react'
 
-const Bar = () => {
+const Bar = (props) => {
   return (
     <div className="bar">
       <form className="searchbar">
-        <input type="search" placeholder="Search for Meal" />
-        <button className="inputbutton">Search</button>
+        <input
+          type="search"
+          placeholder="Search for Meal"
+          value={props.keyword}
+          onChange={(e) => props.setKeyword(e.target.value)}
+        />
+        <button className="inputbutton" onClick={props.onClick}>
+          Search
+        </button>
       </form>
     </div>
   )
