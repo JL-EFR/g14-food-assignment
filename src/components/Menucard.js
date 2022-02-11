@@ -1,19 +1,19 @@
-import React from "react"
+import React from 'react'
 
-const Menucard = () => {
+const MenuCard = (meal) => {
   return (
     <div className="menu">
       <div className="pic">
         <img
-          src="https://www.themealdb.com/images/media/meals/xqwwpy1483908697.jpg"
-          alt="menupic"
+          src={meal.img}
+          alt={meal.title}
         ></img>
       </div>
       <div className="menuname">
-        <h5>name</h5>
+        <h5> {meal.title} </h5>
       </div>
     </div>
   )
 }
 
-export default Menucard
+export default MenuCard
