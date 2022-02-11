@@ -1,25 +1,33 @@
 import axios from 'axios'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import FoodCard from '../components/FoodCard'
 
 const Recipes = () => {
+  const keyword = ''
+  const [meals, setMeals] = useState([])
+  useEffect(() => {
+    displayMealList(keyword)
+  }, [])
+
+  async function displayMealList(keyword) {
+    const rawData = await getFoodListFromApi(keyword)
+    const meals = rawData.meals
+    setMeals(meals)
+  }
+
   return (
     <div className="recipes">
       <form className="searchbar">
         <input type="search" placeholder="Search for Meal" />
-        <button className="inputbutton" onclick>Search</button>
+        <button className="inputbutton">Search</button>
       </form>
       <div className="menulist">
-        <div className="menu">
-          <div className="pic">
-            <img
-              src="https://www.themealdb.com/images/media/meals/xqwwpy1483908697.jpg"
-              alt="menupic"
-            ></img>
-          </div>
-          <div className="menuname">
-            <h5>name</h5>
-          </div>
-        </div>
+        {meals.map((meal) => (
+          <Link key={meal.idMeal} to={`/recipes/${meal.idMeal}`}>
+            <FoodCard img={meal.strMealThumb} title={meal.strMeal} />
+          </Link>
+        ))}
       </div>
     </div>
   )
@@ -39,13 +47,8 @@ async function getFoodByIdFromApi(id) {
   return response.data
 }
 
-function getMealList(keyword) {
-  const rawData = getFoodListFromApi(keyword)
-  return rawData.meals
-}
-
-function getMealDetail(id) {
-  const rawData = getFoodByIdFromApi(id)
+async function getMealDetail(id) {
+  const rawData = await getFoodByIdFromApi(id)
   return rawData.meals[0]
 }
 
