@@ -20,14 +20,17 @@ body {
 }
 
 .menulist {
-  padding-top: 40px;
-  padding-bottom: 40px;
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 45px;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+  gap: 45px;
+}
+
+.menulist a {
+  max-width: 20%;
 }
 
 .menu {
