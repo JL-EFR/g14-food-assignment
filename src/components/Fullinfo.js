@@ -1,27 +1,22 @@
-import React from "react"
+import React from 'react'
 
-const Fullinfo = () => {
+const Fullinfo = (food) => {
   return (
     <div className="fullinfo">
       <div className="fullpic">
-        <img
-          src="https://www.themealdb.com/images/media/meals/xqwwpy1483908697.jpg"
-          alt="menupic"
-        ></img>
+        <img src={food.img} alt={food.title}></img>
       </div>
       <div className="ingredients">
-        <h5>Name</h5>
+        <h5>{food.title}</h5>
         <h6>Ingredients</h6>
         <ul>
-          <li>
-            <p>1 Olive</p>
-          </li>
-          <li>
-            <p>1 Olive</p>
-          </li>
-          <li>
-            <p>1 Olive</p>
-          </li>
+          {food.ingredients.map((ing, idx) => (
+            <li>
+              <p>
+                {food.measure[idx]} {ing}
+              </p>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
